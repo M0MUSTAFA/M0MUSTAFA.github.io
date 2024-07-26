@@ -1,0 +1,115 @@
+/* General styles for the entire body */
+body {
+    background-color: azure; /* Background color of the page */
+    font-family: Arial, sans-serif; /* Font family for the text */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+}
+
+/* Styles for the main content to ensure it expands to push the footer down */
+main {
+    flex: 1; /* Allow the main content to grow and fill available space */
+}
+
+/* Styles for the header */
+header {
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    padding: 1rem; /* Padding inside the header */
+    text-align: center; /* Center the header text */
+    position: relative;
+}
+
+/* Styles for the profile image */
+.profile-img {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 50%; /* Make the image circular */
+    display: block;
+    margin: 0 auto 1rem; /* Center the image and add margin below it */
+}
+
+/* Styles for the navigation menu */
+nav ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    display: flex;
+    justify-content: center; /* Center the navigation menu */
+}
+
+nav ul li {
+    margin: 0 10px; /* Add margin between items */
+}
+
+nav ul li a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Styles for the social icons */
+.social-icons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.social-icons a {
+    margin-left: 10px; /* Space between icons */
+}
+
+.social-icons img {
+    width: 24px; /* Size of the icons */
+    height: 24px;
+}
+
+/* Hide all sections by default */
+section {
+    display: none;
+    padding: 2rem; /* Padding inside each section */
+    margin: 2rem; /* Margin outside each section */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: white; /* White background color */
+}
+
+/* Show the section that matches the URL hash */
+section:target {
+    display: block;
+}
+
+/* Ensure the home section is shown when there's no hash */
+body:has(section:target):not(:has(#home:target)) #home {
+    display: none;
+}
+
+/* Fallback for older browsers to ensure the home section is shown when there's no hash */
+body:not(:has(:target)) #home {
+    display: block;
+}
+
+/* Styles for the resume image */
+.resume-img {
+    max-width: 100%; /* Ensure the image doesn't exceed the section width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    margin: 1rem auto; /* Center and add margin */
+}
+
+/* Styles for the projects */
+.project {
+    margin-bottom: 2rem; /* Space between projects */
+}
+
+/* Styles for the footer */
+footer {
+    text-align: center; /* Center the footer text */
+    padding: 1rem; /* Padding inside the footer */
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    position: fixed; /* Fix the footer at the bottom */
+    width: 100%; /* Make the footer span the entire width */
+    bottom: 0; /* Position it at the bottom */
+}

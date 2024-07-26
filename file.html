@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>Mohamed Mustafa Portfolio</title>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section with title and navigation menu -->
+    <header>
+        <!-- Adding my image at the top -->
+        <img src="https://media.licdn.com/dms/image/D4E03AQEkSZlEfEd9Zg/profile-displayphoto-shrink_200_200/0/1711332212082?e=1727308800&v=beta&t=n99yjHlrh73sJwbh016Dc7qoS4mOjNYTon5GcYmJZUs" alt="My Photo" class="profile-img">
+        <h1>Mohamed Mustafa</h1>
+        <nav>
+            <ul>
+                <!-- Navigation links to different sections of the page -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+        <!-- Social icons in the top right corner -->
+        <div class="social-icons">
+            <a href="https://github.com/MohaemdM" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/moahemd-mustafa-1b5333162/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+        </div>
+    </header>
+
+    <!-- Home section -->
+    <section id="home">
+        <h2>Welcome to My Portfolio</h2>
+        <p>This is where you can learn more about me and my work.</p>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am pursuing a bachelor's in Computer Science at North Carolina A&T State University, driven by a deep passion for technology and a quest for knowledge. I'm dedicated to making the most of my academic journey in any way I can.</p>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <!-- Project 1 -->
+        <div class="project">
+            <h3>Project Title 1</h3>
+            <p>Brief description of Project 1. <a href="https://example.com/project1" target="_blank">View Project</a></p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project">
+            <h3>Project Title 2</h3>
+            <p>Brief description of Project 2. <a href="https://example.com/project2" target="_blank">View Project</a></p>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Resume section -->
+    <section id="resume">
+        <h2>My Resume</h2>
+        <p>Include your resume details or link to a downloadable PDF.</p>
+        <!-- Example link to a downloadable PDF resume -->
+        <p><a href="https://drive.google.com/file/d/17NOeJSeAlUXPYSHoVoDkaSwUNPIQcZ3X/view?usp=sharing" target="_blank">Download My Resume</a></p>
+        <!-- Example image of the resume -->
+        <img src="https://www.linkedin.com/in/moahemd-mustafa-1b5333162/details/featured/1722020604867/single-media-viewer?type=DOCUMENT&profileId=ACoAACbZDFkBtd24_tIAh_K_PWBEG4MN3noWfP4&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_featured_details%3B7YPXcowHSfydE9eWKzQKCQ%3D%3D" alt="Resume Image" class="resume-img">
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Mohamed Mustafa Portfolio</p>
+    </footer>
+
+    <!-- Link to external JavaScript file for interactivity -->
+    <script>
+        // Automatically show the home section on initial load if no hash is present
+        if (!location.hash) {
+            location.hash = "#home";
+        }
+    </script>
+</body>
+</html>
