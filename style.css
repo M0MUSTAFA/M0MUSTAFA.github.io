@@ -1,6 +1,6 @@
 /* General styles for the entire body */
 body {
-    background-color: azure; /* Background color of the page */
+    background-color: rgb(7, 119, 181); /* Background color of the page */
     font-family: Arial, sans-serif; /* Font family for the text */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -18,7 +18,7 @@ main {
 header {
     background-color: #333; /* Dark background color */
     color: white; /* White text color */
-    padding: 1rem; /* Padding inside the header */
+    padding: 0.5rem; /* Padding inside the header */
     text-align: center; /* Center the header text */
     position: relative;
 }
