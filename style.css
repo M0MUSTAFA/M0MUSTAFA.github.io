@@ -1,12 +1,27 @@
+/*add text padding to all paghes to it mnatches the prjects one or lower it on tha page and add a time line or creadentals on about page*/
+
 /* General styles for the entire body */
 body {
-    background-color: rgb(7, 119, 181); /* Background color of the page */
+    background: linear-gradient(to right, #007acc, #00aaff); /* Gradient background */
     font-family: Arial, sans-serif; /* Font family for the text */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    animation: fadeIn 2s ease-in; /* Apply fade-in animation */
+    opacity: 0; /* Start with the body hidden */
+    animation-fill-mode: forwards; /* Ensure the end state is retained */
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Styles for the main content to ensure it expands to push the footer down */
@@ -14,11 +29,16 @@ main {
     flex: 1; /* Allow the main content to grow and fill available space */
 }
 
+/* Center the titles of all sections */
+section h2 {
+    text-align: center;
+}
+
 /* Styles for the header */
 header {
-    background-color: #333; /* Dark background color */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white; /* White text color */
-    padding: 0.5rem; /* Padding inside the header */
+    padding: 1rem; /* Padding inside the header */
     text-align: center; /* Center the header text */
     position: relative;
 }
@@ -47,6 +67,7 @@ nav ul li {
 nav ul li a {
     color: white; /* White text color */
     text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Make links bold */
 }
 
 /* Styles for the social icons */
@@ -61,8 +82,8 @@ nav ul li a {
 }
 
 .social-icons img {
-    width: 24px; /* Size of the icons */
-    height: 24px;
+    width: 30px; /* Increase size as needed */
+    height: 30px; /* Increase size as needed */
 }
 
 /* Hide all sections by default */
@@ -70,9 +91,10 @@ section {
     display: none;
     padding: 2rem; /* Padding inside each section */
     margin: 2rem; /* Margin outside each section */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 10px; /* Rounded corners */
-    background-color: white; /* White background color */
+    border: 1px solid #00000000; /* border */
+    border-radius: 30px; /* Rounded corners */
+    background-color: rgba(5, 0, 0, 0); /* White background color */
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1); /* Add shadow to sections */
 }
 
 /* Show the section that matches the URL hash */
@@ -103,13 +125,40 @@ body:not(:has(:target)) #home {
     margin-bottom: 2rem; /* Space between projects */
 }
 
+/* Styles for the view project icons */
+.view-project-icon {
+    width: 90px; /* Increase size as needed */
+    height: 90px; /* Increase size as needed */
+    vertical-align: middle; /* Align the icon with text */
+    margin-left: 5px; /* Add space before the icon */
+}
+
+/* Styles for the download resume icon */
+.download-resume-icon {
+    width: 125px; /* Increase size as needed */
+    height: 125px; /* Increase size as needed */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: auto; /* Center within its container */
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 1vh; /* Full viewport height for vertical centering */
+}
+
 /* Styles for the footer */
 footer {
     text-align: center; /* Center the footer text */
     padding: 1rem; /* Padding inside the footer */
-    background-color: #333; /* Dark background color */
+    background-color: rgba(0, 0, 0, 0.219); /* Semi-transparent background */
     color: white; /* White text color */
     position: fixed; /* Fix the footer at the bottom */
     width: 100%; /* Make the footer span the entire width */
     bottom: 0; /* Position it at the bottom */
+    height: 10px; /* Set the desired height */
+    line-height: 0px; /* Center text vertically */
 }
