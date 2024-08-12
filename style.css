@@ -1,20 +1,18 @@
-/*add text padding to all paghes to it mnatches the prjects one or lower it on tha page and add a time line or creadentals on about page*/
-
-/* General styles for the entire body */
 body {
-    background: linear-gradient(to right, #007acc, #00aaff); /* Gradient background */
-    font-family: Arial, sans-serif; /* Font family for the text */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    background: #0a192f; /* Dark background color */
+    color: #ccd6f6; /* Light text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
-    animation: fadeIn 2s ease-in; /* Apply fade-in animation */
-    opacity: 0; /* Start with the body hidden */
-    animation-fill-mode: forwards; /* Ensure the end state is retained */
+    min-height: 100vh;
+    animation: fadeIn 2s ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
-/* Fade-in keyframes */
 @keyframes fadeIn {
     25% {
         opacity: 0;
@@ -24,141 +22,238 @@ body {
     }
 }
 
-/* Styles for the main content to ensure it expands to push the footer down */
-main {
-    flex: 1; /* Allow the main content to grow and fill available space */
+/* Header styles - removed since the header is no longer used */
+.name {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: Make the text bold */
+    text-align: center; /* Optional: Center the text */
+}
+/* Navigation styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-/* Center the titles of all sections */
-section h2 {
+.navbar .logo a {
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 1.2rem; /* Adjust font size if needed */
+    margin-bottom: 1rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem; /* Reduced margin */
+}
+
+.nav-links li {
+    margin: 10px 0; /* Reduced margin */
     text-align: center;
 }
 
-/* Styles for the header */
-header {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white; /* White text color */
-    padding: 1rem; /* Padding inside the header */
-    text-align: center; /* Center the header text */
-    position: relative;
-}
-
-/* Styles for the profile image */
-.profile-img {
-    width: 150px; /* Adjust the size as needed */
-    height: auto;
-    border-radius: 50%; /* Make the image circular */
+.nav-links li a {
+    color: #ccd6f6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
     display: block;
-    margin: 0 auto 1rem; /* Center the image and add margin below it */
+    padding: 0.5rem 1rem; /* Adjust padding to fit thinner header */
 }
 
-/* Styles for the navigation menu */
-nav ul {
-    list-style-type: none; /* Remove default list style */
-    padding: 0; /* Remove default padding */
-    display: flex;
-    justify-content: center; /* Center the navigation menu */
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: #64ffda;
 }
 
-nav ul li {
-    margin: 0 10px; /* Add margin between items */
+/* Main content and section styles */
+main {
+    margin-left: 200px; /* Adjusted for thinner sidebar */
+    padding: 20px;
+    flex-grow: 1;
 }
 
-nav ul li a {
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: bold; /* Make links bold */
-}
-
-/* Styles for the social icons */
-.social-icons {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-.social-icons a {
-    margin-left: 10px; /* Space between icons */
-}
-
-.social-icons img {
-    width: 30px; /* Increase size as needed */
-    height: 30px; /* Increase size as needed */
-}
-
-/* Hide all sections by default */
 section {
-    display: none;
-    padding: 2rem; /* Padding inside each section */
-    margin: 2rem; /* Margin outside each section */
-    border: 1px solid #00000000; /* border */
-    border-radius: 30px; /* Rounded corners */
-    background-color: rgba(5, 0, 0, 0); /* White background color */
-    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1); /* Add shadow to sections */
+    padding: 100px 20px 50px;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
-/* Show the section that matches the URL hash */
-section:target {
-    display: block;
+h2 {
+    text-align: center;
+    color: #64ffda;
+    margin-bottom: 20px;
 }
 
-/* Ensure the home section is shown when there's no hash */
-body:has(section:target):not(:has(#home:target)) #home {
-    display: none;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
-/* Fallback for older browsers to ensure the home section is shown when there's no hash */
-body:not(:has(:target)) #home {
-    display: block;
+.project-card {
+    background-color: #112240;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: transform 0.3s ease;
 }
 
-/* Styles for the resume image */
-.resume-img {
-    max-width: 100%; /* Ensure the image doesn't exceed the section width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Center the image */
-    margin: 1rem auto; /* Center and add margin */
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
-/* Styles for the projects */
-.project {
-    margin-bottom: 2rem; /* Space between projects */
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* Styles for the view project icons */
-.view-project-icon {
-    width: 90px; /* Increase size as needed */
-    height: 90px; /* Increase size as needed */
-    vertical-align: middle; /* Align the icon with text */
-    margin-left: 5px; /* Add space before the icon */
+.project-content {
+    padding: 20px;
 }
 
-/* Styles for the download resume icon */
+.project-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #64ffda;
+}
+
+.project-content p {
+    color: #8892b0;
+    margin-bottom: 20px;
+}
+
+.project-content a {
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-content a:hover {
+    color: #ffffff;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #112240;
+    color: #64ffda;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #64ffda;
+    color: #112240;
+}
+
 .download-resume-icon {
-    width: 125px; /* Increase size as needed */
-    height: 125px; /* Increase size as needed */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin: auto; /* Center within its container */
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
-.container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 1vh; /* Full viewport height for vertical centering */
-}
-
-/* Styles for the footer */
 footer {
-    text-align: center; /* Center the footer text */
-    padding: 1rem; /* Padding inside the footer */
-    background-color: rgba(0, 0, 0, 0.219); /* Semi-transparent background */
-    color: white; /* White text color */
-    position: fixed; /* Fix the footer at the bottom */
-    width: 100%; /* Make the footer span the entire width */
-    bottom: 0; /* Position it at the bottom */
-    height: 10px; /* Set the desired height */
-    line-height: 0px; /* Center text vertically */
+    background-color: rgba(10, 25, 47, 0.85); /* Same as header */
+    color: white;
+    text-align: center; /* Center the text */
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 200px); /* Adjusted to fit next to header */
+    margin-left: 200px; /* Align with the main content */
+    margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* New CSS rules for social links */
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 42px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    vertical-align: middle;
+    transition: opacity 0.3s ease;
+}
+
+.social-links img:hover {
+    opacity: 0.7;
+}
+
+
+/* Experience section styles */
+#experience {
+    padding: 100px 20px 50px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.experience-item {
+    margin-bottom: 40px;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: #64ffda;
+    margin-bottom: 10px;
+}
+
+.experience-item p {
+    color: #ccd6f6;
+    line-height: 1.6;
+}
+
+/* Skill section styles */
+#skills {
+    padding: 100px 20px 50px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills-list li {
+    background-color: #112240;
+    color: #64ffda;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: #64ffda;
+    color: #112240;
 }
