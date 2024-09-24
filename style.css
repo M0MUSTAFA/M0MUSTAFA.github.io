@@ -177,7 +177,7 @@ h2 {
 #events .event img {
     display: block;
     margin: 0 auto;
-    width: 500px; /* Adjust the width as needed */
+    width: 300px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -204,6 +204,7 @@ footer {
 .social-links {
     margin-top: 20px;
     text-align: center;
+    
 }
 
 .social-links a {
@@ -242,6 +243,15 @@ footer {
 .experience-item p {
     color: #ccd6f6;
     line-height: 1.6;
+}
+
+/* Responsive images */
+.experience-item img {
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Make the image responsive */
+    max-width: 150px; /* Ensure it doesn't exceed a certain size */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Skill section styles */
